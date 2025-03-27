@@ -1,2 +1,3 @@
 # raycom
-NRF24 based mesh network library for STM32
+
+NRF24 based mesh network library for STM32.
