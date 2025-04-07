@@ -66,16 +66,12 @@ uint8_t NRF_SETUP(nrf_mode_t mode, uint8_t channel, uint8_t* address){
 
 	nrf24_reset (0); // Change later
 
-	uint8_t address[5];
-
 	switch(channel){
 		case common_channel:
-			memcpy(address, common_address, 5);
 			nrf24_WriteReg(EN_AA, 0b00000000);
 			nrf24_WriteReg (SETUP_RETR, 0b00000000);
 			break;
 		default:
-			memcpy(address, MAC_address+1, 5);
 			nrf24_WriteReg(EN_AA, 0b00000001);
 			nrf24_WriteReg (SETUP_RETR, 0b00000011);
 			break;
